@@ -4,5 +4,11 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 *, *:before, *:after {box-sizing: inherit}
 
-
+.metronomeVisual {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: green;
+    padding: 40px;
+}
 
