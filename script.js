@@ -1,7 +1,9 @@
 //  Select elements needed 
 const blinker = document.querySelector('.metronomeVisual');
-const input = document.querySelector('input'); 
 const button = document.querySelector('#start');
+const input = document.querySelector('input'); 
+//  Set input value to 120 to match default tempo variable
+input.value = 120;
 //  Initialize global variables
 let isOn = false;
 let milliseconds = 60000 / 120;
@@ -37,12 +39,11 @@ input.addEventListener('change', () => {
 // Sets interval to do something based on the user's BPM selection  
 const runMetronome = (time) => {
     currentInterval = setInterval(() => {
-        // blinker.style.backgroundColor = 'blue';
-        console.log('click');
+        blinker.style.backgroundColor = 'blue';
         click.play();
-        // setTimeout(() => {
-        //     blinker.style.backgroundColor = 'green';
-        // }, 20)
+        setTimeout(() => {
+            blinker.style.backgroundColor = 'green';
+        }, 20)
     }, time)
 }
 
