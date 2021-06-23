@@ -25,9 +25,10 @@ h1 {
 }
 
 .container {
-    padding-left: 15%;
+    /* padding-left: 15%; */
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 input, label {
@@ -36,9 +37,17 @@ input, label {
 
 input[type=number] {
     border: none;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
+    /* -webkit-appearance: none; */
+    /* -moz-appearance: textfield; */
 }
+
+/* .container::after {
+    content: "BPM";
+    font-family: 'Oswald', sans-serif;
+    font-weight: 100;
+    position: absolute;
+    right: 15%;
+} */
 
 button {
     margin: 15px 0;
@@ -48,7 +57,7 @@ button {
 
 .metronome {
     width: 50%;
-    border: 5px solid cadetblue;
+    border: 5px solid black;
     border-radius: 10px;
     margin: 50px auto;
     padding: 40px;
@@ -61,7 +70,11 @@ button {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background-color: green;
+    border: 2px solid black;
     padding: 40px;
 }
 
+.activeRhythm {
+    background-color: darkgray;
+    color: white;
+}

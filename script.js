@@ -39,13 +39,37 @@ input.addEventListener('change', () => {
 // Sets interval to do something based on the user's BPM selection  
 const runMetronome = (time) => {
     currentInterval = setInterval(() => {
-        blinker.style.backgroundColor = 'blue';
+        blinker.style.backgroundColor = 'black';
         click.play();
         setTimeout(() => {
-            blinker.style.backgroundColor = 'green';
+            blinker.style.backgroundColor = 'white';
         }, 20)
     }, time)
 }
+
+//  Different Rhythms
+const rhythms = document.querySelector('.rhythms');
+const half = document.querySelector('#half');
+const quarter = document.querySelector('#quarter');
+const eigth = document.querySelector('#eigth');
+const sixteenth = document.querySelector('#sixteenth');
+
+rhythms.addEventListener('click', (e) => {
+
+    document.querySelector('.activeRhythm').classList.remove('activeRhythm');
+    e.target.classList.add('activeRhythm');
+
+    const divisor = e.target.value;
+    const tempo = input.value;
+    milliseconds = 60000 / tempo / divisor;
+    clearInterval(currentInterval);
+    if (isOn) {
+        runMetronome(milliseconds);
+    }
+})
+
+
+
 
 
 
